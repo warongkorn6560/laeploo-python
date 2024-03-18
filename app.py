@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask
+from Thaispoon import Spoonerism
 
 app = Flask(__name__)
 
@@ -11,6 +12,12 @@ def hello_world():
     name = os.environ.get("NAME", "World")
     return f"Hello {name}!"
 
+# Create a GET /translate that accepts keyword arguments for the text and returns the spoonerism
+@app.route("/translate")
+def translate():
+    """Return the spoonerism of the given text."""
+    text = request.args.get("text", "")
+    return Spoonerism(text).Loolang()
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
