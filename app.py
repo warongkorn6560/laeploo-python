@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     """Example Hello World route."""
-    return "หลอกดูก!"
+    return "หลอกดูก!!"
 
 # Create a GET /translate that accepts keyword arguments for the text and returns the spoonerism
 @app.route("/translate")
